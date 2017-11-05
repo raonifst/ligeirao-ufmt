@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import template from './my-first.component.html';
 
 @Component({
   selector: 'my-first-component',
-  template,
+  templateUrl: 'my-first.component.html',
+  styleUrls: ['my-first.component.scss']
 })
-export class MyFirstComponent{}
+export class MyFirstComponent{
+  aprende = 'Assim que cria um component.';
+}

@@ -7,8 +7,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './imports/app/app.module';
 
 Meteor.startup(() => {
-  //if (Meteor.isProduction) {
+  if (Meteor.isProduction) {
     enableProdMode();
-  //}
+  }
   platformBrowserDynamic().bootstrapModule(AppModule);
+
+  if (Meteor.isCordova) {
+    StatusBar.backgroundColorByHexString('#4285F4');
+  }
 });

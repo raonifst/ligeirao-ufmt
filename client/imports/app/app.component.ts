@@ -3,6 +3,6 @@ import template from './app.component.html';
 
 @Component({
   selector: 'app-root',
-  template,
+  templateUrl: 'app.component.html'
 })
 export class AppComponent { }

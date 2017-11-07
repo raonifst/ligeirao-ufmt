@@ -12,7 +12,9 @@ Meteor.startup(() => {
   }
   platformBrowserDynamic().bootstrapModule(AppModule);
 
+  // TODO seção de testes para Cordova (remover posteriormente)
+  /*
   if (Meteor.isCordova) {
     StatusBar.backgroundColorByHexString('#4285F4');
-  }
+  }*/
 });

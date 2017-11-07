@@ -10,6 +10,7 @@ App.info({
 });
 
 App.setPreference('Orientation', 'portrait');
+App.setPreference('StatusBarBackgroundColor', '#4285F4');
 
 /*App.icons({
   'android_mdpi': 'public/icon/48.png',

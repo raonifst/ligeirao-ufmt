@@ -10,7 +10,7 @@ import {
   imports: [
     MatTabsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [
     MatTabsModule,
@@ -18,4 +18,4 @@ import {
     MatButtonModule
   ]
 })
-export class MaterialModule {}
+export class AppMaterialModule {}

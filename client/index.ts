@@ -13,6 +13,6 @@ Meteor.startup(() => {
   platformBrowserDynamic().bootstrapModule(AppModule);
 
   if (Meteor.isCordova) {
-    StatusBar.backgroundColorByHexString('#4285F4');
+    // ...
   }
 });

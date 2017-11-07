@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   private qualcomp : string = 'Login';
+
+  private loginWithGoogle() {
+    console.log('tentando fazer login com g+');
+  }
+
+  private loginWithFacebook() {
+
+  }
 }

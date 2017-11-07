@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor'
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SettingsComponent {
   qualcomp = 'Settings';
+
+  logout() {
+    Meteor.logout();
+  }
 }

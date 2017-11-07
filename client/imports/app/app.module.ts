@@ -3,18 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material/material.module';
+import { CoreModule } from './core/core.module';
+import { LoginModule } from './login/login.module';
+
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { MyFirstComponent } from './my-first/my-first.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CoreModule,
+    LoginModule,
+    AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    MyFirstComponent,
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })

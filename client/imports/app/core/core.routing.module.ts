@@ -10,8 +10,15 @@ import { AuthGuard } from '../guards/auth-guard.service';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'schedules', component: SchedulesComponent, canActivate: [AuthGuard]},
-      { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
+      { path: 'schedules',
+        component: SchedulesComponent,
+        canActivate: [AuthGuard]
+      },
+      { path: 'settings',
+        component: SettingsComponent,
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
+      }
     ])
   ],
   exports: [

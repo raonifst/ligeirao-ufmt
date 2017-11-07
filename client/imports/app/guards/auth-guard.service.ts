@@ -1,11 +1,16 @@
 import { Meteor } from 'meteor/meteor'
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router'
 
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {
+  Router,
+  Route,
+  CanActivate,
+  CanLoad,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanLoad {
 
   private currentUser : Meteor.User;
 
@@ -13,17 +18,29 @@ export class AuthGuard implements CanActivate {
     private router : Router
   ) {}
 
-  ngOnInit() {
+  public authAccess() {
+    if (this.currentUser)
+      return true;
+    return false;
+  }
+
+  public ngOnInit() {
     this.currentUser = Meteor.user();
   }
 
-  canActivate(
+  public canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) : boolean {
-    if (this.currentUser)
+    if (this.authAccess())
       return true;
     this.router.navigate(['/login']);
     return false;
+  }
+
+  public canLoad(
+    route: Router
+  ) : boolean {
+    return this.authAccess();
   }
 }

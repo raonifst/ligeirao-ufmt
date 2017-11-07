@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { AuthGuard } from '../guards/auth-guard.service';
+
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'schedules', component: SchedulesComponent },
-      { path: 'settings', component: SettingsComponent }
+      { path: 'schedules', component: SchedulesComponent, canActivate: [AuthGuard]},
+      { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
     ])
   ],
   exports: [

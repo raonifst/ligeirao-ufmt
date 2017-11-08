@@ -5,27 +5,27 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "@angular/animations": "^4.4.6",
-    "@angular/common": "^4.4.6",
-    "@angular/compiler": "^4.4.6",
-    "@angular/core": "^4.4.6",
-    "@angular/forms": "^4.4.6",
-    "@angular/http": "^4.4.6",
-    "@angular/platform-browser": "^4.4.6",
-    "@angular/platform-browser-dynamic": "^4.4.6",
-    "@angular/platform-server": "^4.4.6",
-    "@angular/router": "^4.4.6",
-    "@angular/material": "^2.0.0-beta.12",
-    "@angular/cdk": "^2.0.0-beta.12",
-    "babel-runtime": "^6.26.0",
-    "hammerjs": "^2.0.8",
-    "material-design-icons": "^3.0.1",
-    "meteor-node-stubs": "^0.3.2",
-    "meteor-rxjs": "^0.4.8",
-    "rxjs": "^5.5.2",
-    "zone.js": "^0.8.18"
+    "@angular/animations": "~5.0.0",
+    "@angular/cdk": "~5.0.0-rc0",
+    "@angular/common": "~5.0.0",
+    "@angular/compiler": "~5.0.0",
+    "@angular/core": "~5.0.0",
+    "@angular/forms": "~5.0.0",
+    "@angular/http": "~5.0.0",
+    "@angular/material": "~5.0.0-rc0",
+    "@angular/platform-browser": "~5.0.0",
+    "@angular/platform-browser-dynamic": "~5.0.0",
+    "@angular/platform-server": "~5.0.0",
+    "@angular/router": "~5.0.0",
+    "babel-runtime": "~6.26.0",
+    "bcrypt": "~1.0.3",
+    "hammerjs": "~2.0.8",
+    "meteor-node-stubs": "~0.3.2",
+    "meteor-rxjs": "~0.4.8",
+    "rxjs": "~5.5.2",
+    "zone.js": "~0.8.18"
   },
   "devDependencies": {
-    "@types/meteor": "1.4.12"
+    "@types/meteor": "*"
   }
 }

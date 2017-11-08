@@ -2,20 +2,32 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaterialModule } from './material/material.module';
+import { CoreModule } from './core/core.module';
+import { LoginModule } from './login/login.module';
+
+import { AppMaterialModule } from './app.material.module';
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-import { MyFirstComponent } from './my-first/my-first.component';
+
+import { AuthGuard } from './guards/auth-guard.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    CoreModule,
+    LoginModule,
+    AppMaterialModule,
+    AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    MyFirstComponent,
+    AppComponent
   ],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuard
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {}

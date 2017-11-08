@@ -1,8 +1,6 @@
 import {BusStop} from "./busstop";
 import {Message} from "./message";
 
-declare const Logs: any; // TODO testar referências às coleções de dentro de arquivos TS
-
 /**
  * Representa um registro de log na tabela (coleção) de logs, informando data e local onde foi
  * visto o ônibus.

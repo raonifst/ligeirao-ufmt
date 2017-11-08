@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['login.component.scss']
 })
 export class LoginComponent {
-  private qualcomp : string = 'Login';
+  private nomeTela : String = 'Login';
 
   private loginWithGoogle() {
     console.log('tentando fazer login com g+');
   }
 
   private loginWithFacebook() {
-
+    console.log('tentando fazer login com fb');
   }
 }

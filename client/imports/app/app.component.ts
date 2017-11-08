@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,6 +13,12 @@ export class AppComponent {
     new NavLink('/home', 'HOME'),
     new NavLink('/settings', 'SETTINGS')
   ];
+
+  constructor(
+    private router : Router
+  ) {
+    this.router.navigate(['/home']);
+  }
 }
 
 class NavLink {

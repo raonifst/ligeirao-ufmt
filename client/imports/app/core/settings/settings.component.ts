@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['settings.component.scss']
 })
 export class SettingsComponent {
-  qualcomp = 'Settings';
+  private nomeTela : String = 'Settings';
 
   constructor(
     private router : Router

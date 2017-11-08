@@ -1,4 +1,5 @@
-import { Meteor } from 'meteor/meteor'
+import { Meteor } from 'meteor/meteor';
+import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
 import {
@@ -31,16 +32,16 @@ export class AuthGuard implements CanActivate, CanLoad {
   public canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ) : boolean {
+  ) : Observable<boolean> | boolean {
     if (this.authAccess())
       return true;
-    this.router.navigate(['/login']);
-    return false;
+    //this.router.navigate(['/login']);
+    return true; //arrumar depois que o login estiver pronto.
   }
 
-  public canLoad(
-    route: Router
-  ) : boolean {
+  public canLoad (
+    route: Route
+  ) : Observable<boolean> | Promise<boolean> | boolean {
     return this.authAccess();
   }
 }

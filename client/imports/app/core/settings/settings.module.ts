@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 
+import { AppMaterialModule } from '../../app.material.module';
+
 import { SettingsComponent } from './settings.component';
 
 @NgModule({
-  imports: [],
+  imports: [
+    AppMaterialModule
+  ],
   declarations: [
     SettingsComponent
   ],

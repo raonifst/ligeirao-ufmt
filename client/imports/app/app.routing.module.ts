@@ -10,7 +10,7 @@ import { AuthGuard } from './guards/auth-guard.service';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '',
+      { path: 'home',
         component: HomeComponent,
         canActivate: [AuthGuard]
       },

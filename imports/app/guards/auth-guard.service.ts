@@ -13,10 +13,10 @@ import {
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
 
-  private currentUser : Meteor.User;
+  private currentUser: Meteor.User;
 
   constructor(
-    private router : Router
+    private router: Router
   ) {}
 
   public authAccess() {

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TemplateRef } from '@angular/core';
-import { ViewChild } from '@angular/core';
-
 
 @Component({
   selector: 'app-root',

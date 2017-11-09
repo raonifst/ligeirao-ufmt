@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['settings.component.scss']
 })
 export class SettingsComponent {
-  private nomeTela : String = 'Settings';
+  private nomeTela: String = 'Settings';
 
   constructor(
-    private router : Router
+    private router: Router
   ) {}
 
   logout() {

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['schedules.component.scss']
 })
 export class SchedulesComponent {
-  private nomeTela : String = 'Schedules';
+  private nomeTela: String = 'Schedules';
 }

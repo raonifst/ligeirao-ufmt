@@ -7,8 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['login.component.scss']
 })
 export class LoginComponent {
-  private nomeTela: String = 'Login';
-
   private loginWithGoogle() {
     console.log('tentando fazer login com g+');
   }

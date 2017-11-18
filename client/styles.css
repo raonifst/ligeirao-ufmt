@@ -1,3 +1,7 @@
+:root{
+  --cor-pri:#4285F4;
+}
+
 body {
   margin:0;
   background: #f9f9f9

@@ -9,10 +9,6 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   private nomeTela : String = 'Login';
 
-  private loginWithGoogle() {
-    console.log('tentando fazer login com g+');
-  }
-
   private loginWithFacebook() {
     console.log('tentando fazer login com fb');
   }

@@ -1,0 +1,13 @@
+
+
+<button *ngIf="!token" id="google-login-button" class="btn btn-primary" (click)="googleAuthenticate()">Google Sign-In</button>
+
+ <div *ngIf="token">
+   <!--img src="{{imageURL}}"-->
+   <br>
+   <b>NAME: </b>
+   <p>{{name}}</p>
+   <b>EMAIL: </b>
+   <p>{{email}}</p>
+   <button class="btn btn-danger" (click)="logout()">Logout</button>
+ </div>

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Observable } from 'rxjs/Rx';
-import { Injectable } from '@angular/core';
+
+import { EventEmitter, Injectable } from '@angular/core';
 
 import {
   Router,
@@ -14,15 +15,19 @@ import {
 export class AuthGuard implements CanActivate, CanLoad {
 
   private currentUser: Meteor.User;
+  public showItemsEmitter = new EventEmitter<boolean>();
 
   constructor(
     private router: Router
   ) {}
 
   public authAccess() {
-    if (this.currentUser)
+    if (this.currentUser) {
+      this.showItemsEmitter.emit(true);
       return true;
-    return false;
+    }
+    this.showItemsEmitter.emit(false); /* Colocar true para testes enquanto não há login */
+    return false; /* Colocar true para testes enquanto não há login */
   }
 
   public ngOnInit() {
@@ -35,8 +40,8 @@ export class AuthGuard implements CanActivate, CanLoad {
   ) : Observable<boolean> | boolean {
     if (this.authAccess())
       return true;
-    //this.router.navigate(['/login']);
-    return true; //arrumar depois que o login estiver pronto.
+    this.router.navigate(['/login']);
+    return false;
   }
 
   public canLoad (

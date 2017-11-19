@@ -1,31 +1,22 @@
 .screen {
   display: flex;
-  max-height: 100vh;
   flex-direction: column;
-  padding-top: 75vh /* Diminuir após colocar o logo */
+}
+
+.login {
+  padding-top: 78vh
 }
 
 .mat-raised-button {
   font-size: 20px;
   height: 46px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 7px 20px;
   line-height: inherit;
   border-radius: 25px
-}
-
-.google {
-  background-color: #C84938;
-  fill: #f9f9f9;
-  color: #f9f9f9
 }
 
 .facebook {
   background-color: #4D5DC2;
   fill: #f9f9f9;
   color: #f9f9f9
-}
-
-svg {
-  align-items: flex-start;
 }

@@ -14,3 +14,9 @@ a[href^="/home"]  {
   fill: var(--cor-pri);
   opacity: 1.0
 }
+
+.mat-tab-nav-bar {
+  border-bottom: none;
+  box-shadow: 0px 2px 10px 0px #bdbdbd;
+  background: #fff; 
+}

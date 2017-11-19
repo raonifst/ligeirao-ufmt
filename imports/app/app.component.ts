@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TemplateRef } from '@angular/core';
-import { ViewChild } from '@angular/core';
 
+import { AuthGuard } from './guards/auth-guard.service';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +9,24 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  navLinks = [
+  private showMenu: boolean =  false;
+  private navLinks: []NavLink = [
     new NavLink('/schedules', 0, 'Lista de Horários'),
     new NavLink('/home', 1, 'Escolha seu ponto'),
     new NavLink('/settings', 2, 'Configurações')
   ];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private autoGuard: AuthGuard
   ) {
     this.router.navigate(['/home']);
+  }
+
+  ngOnInit() {
+    this.autoGuard.showItemsEmitter.subscribe(
+      show => this.showMenu = show
+    );
   }
 }
 

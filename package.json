@@ -17,13 +17,16 @@
     "@angular/platform-browser-dynamic": "~5.0.0",
     "@angular/platform-server": "~5.0.0",
     "@angular/router": "~5.0.0",
+    "angular2-google-login": "^1.0.9",
     "babel-runtime": "~6.26.0",
     "bcrypt": "~1.0.3",
+    "core-js": "^2.5.1",
     "hammerjs": "~2.0.8",
     "meteor-node-stubs": "~0.3.2",
     "meteor-rxjs": "~0.4.8",
     "rxjs": "~5.5.2",
-    "zone.js": "~0.8.18"
+    "tslib": "^1.8.0",
+    "zone.js": "^0.8.18"
   },
   "devDependencies": {
     "@types/meteor": "*"

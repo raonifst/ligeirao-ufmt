@@ -9,8 +9,8 @@ import { AuthGuard } from './guards/auth-guard.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  private showMenu: boolean =  false;
-  private navLinks: []NavLink = [
+  private showMenu: boolean = false;
+  private navLinks: NavLink[] = [
     new NavLink('/schedules', 0, 'Lista de Horários'),
     new NavLink('/home', 1, 'Escolha seu ponto'),
     new NavLink('/settings', 2, 'Configurações')

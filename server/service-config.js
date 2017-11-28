@@ -1,30 +1,20 @@
 import { Meteor } from 'meteor/meteor';
 import { ServiceConfiguration } from 'meteor/service-configuration';
+import { allLoginServices } from "../imports/api/objects/oauth-data";
 
 Meteor.startup(() => {
-  ServiceConfiguration.configurations.upsert({
-    service: 'facebook'
-  }, {
-    $set: {
-      // TODO remover appId e secret ao final do estágio de desenvolvimento
-      // TODO atualizar novos appId e secret no aplicativo do Facebook
-      appId: '150860088999367', // Temporary appId: will not work on future releases
-      loginStyle: 'popup',
-      secret: 'ff990ba95b321583de9396b1d04ed705' // Temporary appKey
-    },
-  });
-  // TODO Julio, altere o clientId e o secret abaixo
-  ServiceConfiguration.configurations.upsert({
-    service: 'google'
-  }, {
-    $set: {
-      // TODO remover clientId e secret ao final do estágio de desenvolvimento
-      // TODO atualizar novos appId e secret no aplicativo do Google
-      clientId: '', // Temporary appId: will not work on future
-      // releases
-      loginStyle: 'popup',
-      secret: '' // Temporary appKey
-    },
-  });
+
+  // Itera o JSON de serviços e adiciona cada um deles no banco de dados
+  // para correta autenticação
+  for (let service in allLoginServices) {
+    if (allLoginServices.hasOwnProperty(service)) {
+      ServiceConfiguration.configurations.upsert({
+        service: service
+      }, {
+        $set: allLoginServices[service],
+      });
+    }
+  }
   console.log('ServiceConfiguration inicializado.');
+
 });

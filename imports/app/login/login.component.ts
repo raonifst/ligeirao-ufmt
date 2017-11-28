@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Component } from '@angular/core';
+import { LoginService } from "../shared/login.service";
 
 @Component({
   selector: 'login-component',
@@ -7,17 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['login.component.scss']
 })
 export class LoginComponent {
+
+  constructor(
+    private loginService: LoginService
+  ) { }
+
   private loginWithFacebook() {
-    Meteor.loginWithFacebook({
-      requestPermissions: ['public_profile', 'email']
-    }, (err) => {
-      if (err) {
-        console.log("Erro: " + err);
-      } else {
-        // TODO remover as seguintes linhas de console log ao final da implementação
-        console.log("Login feito com sucesso (ID: " + Meteor.userId() + ")");
-        console.log(Meteor.user());
-      }
-    });
+    this.loginService.loginWithFacebook();
   }
+
 }

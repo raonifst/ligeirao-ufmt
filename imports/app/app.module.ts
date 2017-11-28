@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthGuard } from './guards/auth-guard.service';
+import { LoginService } from "./shared/login.service";
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { AuthGuard } from './guards/auth-guard.service';
     AppComponent
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    LoginService
   ],
   bootstrap: [
     AppComponent

@@ -1,7 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import { Observable } from 'rxjs/Rx';
 
-import { EventEmitter, Injectable } from '@angular/core';
+import {
+  EventEmitter,
+  Injectable,
+  OnInit
+} from '@angular/core';
 
 import {
   Router,
@@ -9,10 +13,11 @@ import {
   CanActivate,
   CanLoad,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot } from '@angular/router';
+  RouterStateSnapshot
+} from '@angular/router';
 
 @Injectable()
-export class AuthGuard implements CanActivate, CanLoad {
+export class AuthGuard implements CanActivate, CanLoad, OnInit {
 
   private currentUser: Meteor.User;
   public showItemsEmitter = new EventEmitter<boolean>();
@@ -22,8 +27,8 @@ export class AuthGuard implements CanActivate, CanLoad {
   ) {}
 
   public authAccess() {
-    this.currentUser = Meteor.user();
-    console.log('Meteor current user: '+this.currentUser);
+    this.currentUser = Meteor.call('verifyUser');
+    console.log('Meteor current user: ' + this.currentUser);
     if (this.currentUser) {
       this.showItemsEmitter.emit(true);
       return true;

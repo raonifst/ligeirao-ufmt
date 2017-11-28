@@ -21,4 +21,8 @@ export class LoginService {
     });
   }
 
+  loginWithGoogle() {
+    // TODO transferir o método Meteor.loginWithGoogle para cá
+  }
+
 }

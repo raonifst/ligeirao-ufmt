@@ -27,8 +27,8 @@ export class AuthGuard implements CanActivate, CanLoad, OnInit {
   ) {}
 
   public authAccess() {
-    this.currentUser = Meteor.call('verifyUser');
-    console.log('Meteor current user: ' + this.currentUser);
+    // TODO corrigir dependência do AuthGuard com o Meteor
+    this.currentUser = Meteor.user();
     if (this.currentUser) {
       this.showItemsEmitter.emit(true);
       return true;

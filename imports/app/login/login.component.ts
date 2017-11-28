@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import { Component } from '@angular/core';
 import { LoginService } from "../shared/login.service";
 
@@ -15,6 +14,10 @@ export class LoginComponent {
 
   private loginWithFacebook() {
     this.loginService.loginWithFacebook();
+  }
+
+  private loginWithGoogle() {
+    this.loginService.loginWithGoogle();
   }
 
 }

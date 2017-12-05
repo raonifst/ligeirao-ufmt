@@ -15,30 +15,32 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
+import {LoginService} from "../shared/login.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad, OnInit {
 
-  private currentUser: Meteor.User;
-  public showItemsEmitter = new EventEmitter<boolean>();
-
   constructor(
+    private loginService: LoginService,
     private router: Router
   ) {}
 
   public authAccess() {
     // TODO corrigir dependência do AuthGuard com o Meteor
-    this.currentUser = Meteor.user();
-    if (this.currentUser) {
-      this.showItemsEmitter.emit(true);
+    //this.currentUserId = Meteor.userId();
+    if (this.loginService.userIsLoggedIn()) {
+      console.log('Usuário: ' + Meteor.userId());
+      this.loginService.getShowItemsEmitter().emit(true);
       return true;
     }
-    this.showItemsEmitter.emit(false); /* Colocar true para testes enquanto não há login */
-    return false; /* Colocar true para testes enquanto não há login */
+    console.log('Usuário: ' + Meteor.userId());
+    // Colocar true para testes enquanto não há login
+    this.loginService.getShowItemsEmitter().emit(false);
+    return false; // Colocar true para testes enquanto não há login
   }
 
   public ngOnInit() {
-    this.currentUser = Meteor.user();
+    this.authAccess();
   }
 
   public canActivate(

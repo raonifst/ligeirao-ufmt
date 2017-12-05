@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { LoginService } from '../../shared/login.service';
 
 @Component({
   selector: 'settings-component',
@@ -8,14 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['settings.component.scss']
 })
 export class SettingsComponent {
+
   private nomeTela: String = 'Settings';
 
   constructor(
-    private router: Router
+    private loginService: LoginService
   ) {}
 
-  logout() {
-    Meteor.logout();
-    this.router.navigate(['/login']);
+  onLogout() {
+    this.loginService.logout();
   }
+
 }

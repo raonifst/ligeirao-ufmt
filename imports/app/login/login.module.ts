@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppMaterialModule } from '../app.material.module';
 import { LoginComponent } from './login.component';
-import { GoogleLoginComponent } from './googlelogin/google-login.component';
+
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { GoogleLoginComponent } from './googlelogin/google-login.component';
   ],
   declarations: [
     LoginComponent,
-    GoogleLoginComponent
+
   ],
   providers: []
 })

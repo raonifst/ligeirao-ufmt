@@ -30,6 +30,20 @@ export class LoginService {
 
   loginWithGoogle(): void {
     // TODO transferir o método Meteor.loginWithGoogle para cá
+    Meteor.loginWithGoogle ({
+        requestOfflineToken: true,
+       redirectUrl : "http://localhost:3000/_oauth/google?close"
+      },(err)=>{
+          if(err){
+                //throw new (Meteor.Error)('google login failed);
+                console.log(err);
+          }
+          else{
+              console.log("Login with google sucess :ID("+Meteor.userId()+")");
+              console.log(Meteor.user());
+            }
+
+      });
   }
 
   userIsLoggedIn(): boolean {

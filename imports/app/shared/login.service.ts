@@ -19,31 +19,30 @@ export class LoginService {
       if (error) {
         console.log("Erro: " + error);
       } else {
-        // TODO remover as seguintes linhas de console log ao final da implementação
-        console.log("Login feito com sucesso (ID: " + Meteor.userId() + ")");
-        console.log(Meteor.user());
-        // TODO consertar a gambiarra de location.reload() futuramente
-        location.reload();
+        this.proceedWithLogin();
       }
     });
   }
 
   loginWithGoogle(): void {
-    // TODO transferir o método Meteor.loginWithGoogle para cá
     Meteor.loginWithGoogle ({
-        requestOfflineToken: true,
-       redirectUrl : "http://localhost:3000/_oauth/google?close"
-      },(err)=>{
-          if(err){
-                //throw new (Meteor.Error)('google login failed);
-                console.log(err);
-          }
-          else{
-              console.log("Login with google sucess :ID("+Meteor.userId()+")");
-              console.log(Meteor.user());
-            }
+      requestOfflineToken: true,
+      redirectUrl : "http://localhost:3000/_oauth/google?close"
+    }, (error) => {
+      if (error) {
+        console.log("Erro: " + error);
+      } else {
+        this.proceedWithLogin();
+      }
+    });
+  }
 
-      });
+  private proceedWithLogin(): void {
+    // TODO remover as seguintes linhas de console log ao final da implementação
+    console.log("Login feito com sucesso (ID: " + Meteor.userId() + ")");
+    console.log(Meteor.user());
+    // TODO consertar a gambiarra de location.reload() futuramente
+    location.reload();
   }
 
   userIsLoggedIn(): boolean {

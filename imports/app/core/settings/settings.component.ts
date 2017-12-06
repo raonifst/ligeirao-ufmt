@@ -9,7 +9,7 @@ import { LoginService } from '../../shared/login.service';
 })
 export class SettingsComponent {
 
-  private nomeTela: String = 'Settings';
+  private screenName: string = 'Settings';
 
   constructor(
     private loginService: LoginService

@@ -8,7 +8,7 @@ import { MapService } from "../../shared/map.service";
 
 @NgModule({
   imports: [
-    AppMaterialModule
+    AppMaterialModule,
   ],
   declarations: [
     HomeComponent

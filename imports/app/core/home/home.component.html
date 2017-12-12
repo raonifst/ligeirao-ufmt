@@ -4,6 +4,13 @@
   <h1>Bem-vindo!</h1>
   <p>Para começar, clique em um dos pontos do mapa abaixo.</p>
   <hr>
+
+  <button mat-button [matMenuTriggerFor]="menu" type="hidden"></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1shfuashfuhasoifhasoifhasiofhasihdi</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
   <img src ="images/map2.png" width="451" height="818" alt="MapUFMT"
   usemap="#ufmtmap">
 
@@ -12,4 +19,6 @@
     <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
     <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
   </map>
+
+
 </div>

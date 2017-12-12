@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from './guards/auth-guard.service';
 import { LoginService } from "./shared/login.service";
+import {MapService} from "./shared/map.service";
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { LoginService } from "./shared/login.service";
   ],
   providers: [
     AuthGuard,
-    LoginService
+    LoginService,
+    MapService
   ],
   bootstrap: [
     AppComponent

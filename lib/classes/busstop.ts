@@ -1,4 +1,4 @@
-import {Immutable} from "./immutable";
+import { Immutable } from './immutable';
 
 /**
  * Representa um ponto de parada do ônibus. Esta informação deve conter um índice (utilizado

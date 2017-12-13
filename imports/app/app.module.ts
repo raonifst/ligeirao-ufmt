@@ -4,14 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
-
 import { AppMaterialModule } from './app.material.module';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
-
 import { AuthGuard } from './guards/auth-guard.service';
 import { LoginService } from "./shared/login.service";
-import {MapService} from "./shared/map.service";
 
 @NgModule({
   imports: [
@@ -27,8 +24,7 @@ import {MapService} from "./shared/map.service";
   ],
   providers: [
     AuthGuard,
-    LoginService,
-    MapService
+    LoginService
   ],
   bootstrap: [
     AppComponent

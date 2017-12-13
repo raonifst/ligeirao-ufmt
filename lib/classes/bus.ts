@@ -1,4 +1,4 @@
-import {BusStop} from "./busstop";
+import { BusStop } from './busstop';
 
 /**
  * Classe que representa a instância do ônibus do Ligeirão.

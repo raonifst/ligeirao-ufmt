@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 
 // Coleção que guarda cada entrada da tabela de horários de circulação do Ligeirão
-const Timetable = new Mongo.Collection('timetable');
+const timetable = new Mongo.Collection('timetable');
 
-export default Timetable;
+export default timetable;

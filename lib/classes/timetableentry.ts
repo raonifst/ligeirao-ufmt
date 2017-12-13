@@ -1,4 +1,4 @@
-export enum LigeiraoStatus {NoStops, PeriodicStops}
+export enum LigeiraoStatus { NoStops, PeriodicStops }
 
 /**
  * Representa um registro ou uma linha da tabela de horários do Ligeirão.

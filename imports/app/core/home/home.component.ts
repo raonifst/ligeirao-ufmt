@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { MapService } from "../../shared/map.service";
-import {MatMenuTrigger} from '@angular/material';
+import { MatMenuTrigger } from '@angular/material';
+
+import { MapService } from '../../shared/map.service';
 
 @Component({
   selector: 'home-component',
@@ -8,16 +9,16 @@ import {MatMenuTrigger} from '@angular/material';
   styleUrls: ['home.component.scss']
 })
 export class HomeComponent {
-    @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-    constructor(
-      private mapService: MapService
-    ) { }
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-    private MyFunction() {
-      this.trigger.openMenu();
-      this.mapService.MyFunction();
-      console.log("oi")
-    }
+  constructor(
+    private mapService: MapService
+  ) { }
+
+  private onClickMap() {
+    this.trigger.openMenu();
+    //this.mapService.myFunction();
+  }
 
 }

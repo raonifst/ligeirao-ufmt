@@ -5,20 +5,21 @@
   <p>Para começar, clique em um dos pontos do mapa abaixo.</p>
   <hr>
 
-  <button mat-button [matMenuTriggerFor]="menu" type="hidden"></button>
+  <button mat-button [matMenuTriggerFor]="menu"></button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1shfuashfuhasoifhasoifhasiofhasihdi</button>
-    <button mat-menu-item>Item 2</button>
+    <!-- Implementar um ngFor iterando sobre a coleção de mensagens -->
+    <button mat-menu-item>Mensagem #1</button>
+    <button mat-menu-item>Mensagem #2</button>
+    <button mat-menu-item>Mensagem #3</button>
   </mat-menu>
 
-  <img src ="images/map2.png" width="451" height="818" alt="MapUFMT"
+  <img src="images/map2.png" width="451" height="818" alt="MapUFMT"
   usemap="#ufmtmap">
 
   <map name="ufmtmap">
-    <area shape="rect" coords="0,0,82,126" (click)="MyFunction()" alt="Sun">
+    <area shape="rect" coords="0,0,82,126" (click)="onClickMap()" alt="Sun">
     <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
     <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
   </map>
-
 
 </div>

@@ -1,4 +1,4 @@
-import {Immutable} from "./immutable";
+import { Immutable } from './immutable';
 
 /**
  * Representa uma mensagem pré-definida de status de um Log. Esta mensagem apresenta uma

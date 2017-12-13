@@ -1,7 +1,12 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  OnInit
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { LoginService } from './shared/login.service';
+import { NavLink } from '../../lib/classes/navlink';
 
 @Component({
   selector: 'app-root',
@@ -39,16 +44,4 @@ export class AppComponent implements OnInit, OnChanges {
     );
   }
 
-}
-
-class NavLink {
-  path: string;
-  label: number;
-  text: string;
-
-  constructor(path: string, label: number, text: string) {
-    this.path = path;
-    this.label = label;
-    this.text = text;
-  }
 }

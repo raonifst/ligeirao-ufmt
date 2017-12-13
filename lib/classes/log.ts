@@ -1,5 +1,5 @@
-import {BusStop} from "./busstop";
-import {Message} from "./message";
+import { BusStop } from './busstop';
+import { Message } from './message';
 
 /**
  * Representa um registro de log na tabela (coleção) de logs, informando data e local onde foi

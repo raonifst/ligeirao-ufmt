@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { AppMaterialModule } from '../app.material.module';
 import { LoginComponent } from './login.component';
 
-
 @NgModule({
   imports: [
     CommonModule,

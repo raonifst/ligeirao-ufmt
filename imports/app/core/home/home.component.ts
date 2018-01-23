@@ -16,9 +16,10 @@ export class HomeComponent {
     private mapService: MapService
   ) { }
 
-  private onClickMap() {
-    this.trigger.openMenu();
+  private onClickMap(event) {
+    //this.trigger.openMenu();
     //this.mapService.myFunction();
+    console.log(event.offsetX+" "+event.offsetY);
   }
 
 }

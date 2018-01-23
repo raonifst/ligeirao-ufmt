@@ -1,25 +1,19 @@
 <!-- TODO arrumar layout cagado do Material Angular -->
 <!-- O código abaixo está incompleto e serve apenas para dar uma ideia -->
-<div style="text-align: center;">
-  <h1>Bem-vindo!</h1>
-  <p>Para começar, clique em um dos pontos do mapa abaixo.</p>
-  <hr>
+<div class="home">
 
-  <button mat-button [matMenuTriggerFor]="menu"></button>
+  <!--<button mat-button [matMenuTriggerFor]="menu"></button>
   <mat-menu #menu="matMenu">
-    <!-- Implementar um ngFor iterando sobre a coleção de mensagens -->
     <button mat-menu-item>Mensagem #1</button>
     <button mat-menu-item>Mensagem #2</button>
     <button mat-menu-item>Mensagem #3</button>
-  </mat-menu>
+  </mat-menu>-->
 
-  <img src="images/map2.png" width="451" height="818" alt="MapUFMT"
-  usemap="#ufmtmap">
+  <img src="images/map2.png" alt="MapUFMT" usemap="#ufmtmap" (mousedown)="onClickMap($event)">
 
-  <map name="ufmtmap">
+
+  <!--<map name="ufmtmap">
     <area shape="rect" coords="0,0,82,126" (click)="onClickMap()" alt="Sun">
-    <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
-    <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
-  </map>
+  </map>-->
 
 </div>

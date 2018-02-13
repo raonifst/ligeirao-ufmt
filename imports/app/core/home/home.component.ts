@@ -33,11 +33,9 @@ export class HomeComponent implements OnInit {
     //this.mapService.myFunction();
     let fatorW: number = screen.width/412;
     let fatorH: number = screen.height/732;
-    let pointX = [];
-    let pointY = [];
-    pointX.push(Math.floor(229*fatorW));
-    pointY.push(Math.floor(94*fatorH));
-    console.log(pointX[0], pointY[0]);
+    let pointX = Math.floor(event.offsetX/fatorW);
+    let pointY = Math.floor(event.offsetY/fatorH);
+    console.log(pointX,pointY);
     console.log(event.offsetX+" "+event.offsetY+", "+screen.width+" "+screen.height);
   }
 

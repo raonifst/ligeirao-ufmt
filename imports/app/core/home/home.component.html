@@ -2,65 +2,36 @@
 <!-- O código abaixo está incompleto e serve apenas para dar uma ideia -->
 <div class="home">
 
-  <!--<button mat-button [matMenuTriggerFor]="menu"></button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Mensagem #1</button>
-    <button mat-menu-item>Mensagem #2</button>
-    <button mat-menu-item>Mensagem #3</button>
-  </mat-menu>-->
+  <img src="images/map2.png" alt="MapUFMT" usemap="#ufmtmap">
 
-  <img src="images/map2.png" alt="MapUFMT" usemap="#ufmtmap" (mousedown)="onClickMap($event)">
-
-  <svg class="svgbox" expanded="true" height="732px" width="412px">
-    <circle cx="168px" cy="092px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="156px" cy="154px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="114px" cy="234px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="172px" cy="333px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="258px" cy="445px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="282px" cy="572px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="184px" cy="176px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="156px" cy="261px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="200px" cy="321px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="301px" cy="450px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"></circle>
-    <circle cx="332px" cy="450px"
-            [attr.r]="pointsRadius"
-            [attr.fill]="pointsColor"
-            [attr.opacity]="pointsOpacity"
-            (mousedown)="onButtonClick($event)"></circle>
+  <svg class="svgbox" viewBox="0 0 412 732">
+    <circle *ngFor="let b of listStops"
+            [attr.cx]="b.getCoordX()" [attr.cy]="b.getCoordY()"
+            [attr.r]="dotAnimatedInitialRadius"
+            [attr.fill]="dotAnimatedColor"
+            [attr.opacity]="dotAnimatedInitialOpacity">
+      <animate
+        attributeName="r"
+        [attr.begin]="dotAnimatedInitialTime"
+        [attr.dur]="dotAnimatedFinalTime"
+        repeatCount="indefinite"
+        [attr.from]="dotAnimatedInitialRadius"
+        [attr.to]="dotAnimatedFinalRadius"></animate>
+      <animate
+        attributeName="opacity"
+        [attr.begin]="dotAnimatedInitialTime"
+        [attr.dur]="dotAnimatedFinalTime"
+        repeatCount="indefinite"
+        [attr.from]="dotAnimatedInitialOpacity"
+        [attr.to]="dotAnimatedFinalOpacity"></animate>
+    </circle>
+    <circle *ngFor="let b of listStops"
+            [attr.cx]="b.getCoordX()" [attr.cy]="b.getCoordY()"
+            [attr.r]="dotRadius"
+            [attr.fill]="dotColor"
+            [attr.opacity]="dotOpacity"
+            (mousedown)="onButtonClick(b)">
+    </circle>
   </svg>
-
-  <!--<map name="ufmtmap">
-    <area shape="rect" coords="0,0,82,126" (click)="onClickMap()" alt="Sun">
-  </map>-->
 
 </div>

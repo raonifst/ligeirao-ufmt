@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AppMaterialModule } from '../../app.material.module';
 import { HomeComponent } from './home.component';
+import { MapComponent } from "./map/map.component";
 import { MapService } from "../../shared/map.service";
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MapService } from "../../shared/map.service";
     CommonModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   providers: [
     MapService

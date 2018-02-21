@@ -1,37 +1,3 @@
-<!-- TODO arrumar layout cagado do Material Angular -->
-<!-- O código abaixo está incompleto e serve apenas para dar uma ideia -->
 <div class="home">
-
-  <img id="imageMap" src="images/map2.png" alt="MapUFMT" usemap="#ufmtmap">
-
-  <svg class="svgbox" viewBox="0 0 412 732">
-    <circle *ngFor="let b of busStopsList"
-            [attr.cx]="b.getDOMCoordX()" [attr.cy]="b.getDOMCoordY()"
-            [attr.r]="dotAnimatedInitialRadius"
-            [attr.fill]="dotAnimatedColor"
-            [attr.opacity]="dotAnimatedInitialOpacity">
-      <animate
-        attributeName="r"
-        [attr.begin]="dotAnimatedInitialTime"
-        [attr.dur]="dotAnimatedFinalTime"
-        repeatCount="indefinite"
-        [attr.from]="dotAnimatedInitialRadius"
-        [attr.to]="dotAnimatedFinalRadius"></animate>
-      <animate
-        attributeName="opacity"
-        [attr.begin]="dotAnimatedInitialTime"
-        [attr.dur]="dotAnimatedFinalTime"
-        repeatCount="indefinite"
-        [attr.from]="dotAnimatedInitialOpacity"
-        [attr.to]="dotAnimatedFinalOpacity"></animate>
-    </circle>
-    <circle *ngFor="let b of busStopsList; let i = index"
-            [attr.cx]="b.getDOMCoordX()" [attr.cy]="b.getDOMCoordY()"
-            [attr.r]="dotRadius"
-            [attr.fill]="dotColor"
-            [attr.opacity]="dotOpacity"
-            (mousedown)="onButtonClick(i)">
-    </circle>
-  </svg>
-
+  <map-component></map-component>
 </div>

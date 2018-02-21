@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 
 import { MapService } from '../../shared/map.service';
+import { BusStop } from '../../../../lib/classes/busstop';
 
 @Component({
   selector: 'home-component',
@@ -12,13 +13,20 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
+  private pointsRadius: number = "2.5%";
+
+  private pointsColor: string = "#4285F4";
+
+  private pointsOpacity: string = 0.6;
+
+  private listStops: BusStop[];
+
   //pointX = [229, 213, 69, 264];
   //pointY = [94, 170, 325, 536];
 
   constructor(
     private mapService: MapService
-  ) {
-  }
+  ) { }
 
   private ngOnInit() {
 
@@ -26,6 +34,10 @@ export class HomeComponent implements OnInit {
 
   private transLinear(resolution) {
 
+  }
+
+  private onButtonClick(event) {
+    console.log("BOSTA");
   }
 
   private onClickMap(event) {

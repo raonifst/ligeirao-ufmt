@@ -11,6 +11,53 @@
 
   <img src="images/map2.png" alt="MapUFMT" usemap="#ufmtmap" (mousedown)="onClickMap($event)">
 
+  <svg class="svgbox" expanded="true" height="732px" width="412px">
+    <circle cx="168px" cy="092px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="156px" cy="154px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="114px" cy="234px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="172px" cy="333px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="258px" cy="445px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="282px" cy="572px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="184px" cy="176px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="156px" cy="261px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="200px" cy="321px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="301px" cy="450px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"></circle>
+    <circle cx="332px" cy="450px"
+            [attr.r]="pointsRadius"
+            [attr.fill]="pointsColor"
+            [attr.opacity]="pointsOpacity"
+            (mousedown)="onButtonClick($event)"></circle>
+  </svg>
 
   <!--<map name="ufmtmap">
     <area shape="rect" coords="0,0,82,126" (click)="onClickMap()" alt="Sun">

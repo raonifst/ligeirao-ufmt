@@ -12,11 +12,11 @@ export abstract class Immutable {
     this.name = name;
   }
 
-  getName() {
+  getName(): string {
     return this.name;
   }
 
-  getIndex() {
+  getIndex(): number {
     return this.index;
   }
 

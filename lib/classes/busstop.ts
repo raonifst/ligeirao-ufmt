@@ -7,9 +7,11 @@ import { Immutable } from './immutable';
  */
 export class BusStop extends Immutable {
 
-  private coordX: string;
+  private coordX: number;
 
-  private coordY: string;
+  private coordY: number;
+
+  private suffix: string = "px";
 
   /**
    * Instancia um novo ponto de parada do Ligeirão.
@@ -19,18 +21,18 @@ export class BusStop extends Immutable {
    * @param {string} coordX coordenada em X
    * @param {string} coordY coordenada em Y
    */
-  constructor(index: number, name: string, coordX: string, coordY: string) {
+  constructor(index: number, name: string, coordX: number, coordY: number) {
     super(index, name);
     this.coordX = coordX;
     this.coordY = coordY;
   }
 
-  getCoordX(): string {
-    return this.coordX;
+  getDOMCoordX(): string {
+    return this.coordX + this.suffix;
   }
 
-  getCoordY(): string {
-    return this.coordY;
+  getDOMCoordY(): string {
+    return this.coordY + this.suffix;
   }
 
 }

@@ -15,7 +15,7 @@ export class MapService {
     this.busStopsList = busStopsData;
   }
 
-  getBusStopsList(): BusStop {
+  getBusStopsList(): BusStop[] {
     return this.busStopsList;
   }
 

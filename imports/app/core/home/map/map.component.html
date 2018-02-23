@@ -5,29 +5,53 @@
 <svg class="svgbox" viewBox="0 0 412 732">
   <circle *ngFor="let b of busStopsList"
           [attr.cx]="b.getDOMCoordX()" [attr.cy]="b.getDOMCoordY()"
-          [attr.r]="dotAnimatedInitialRadius"
+          [attr.r]="dotAnimatedFromRadius"
           [attr.fill]="dotAnimatedColor"
-          [attr.opacity]="dotAnimatedInitialOpacity">
+          [attr.opacity]="dotAnimatedFromOpacity">
     <animate
       attributeName="r"
-      [attr.begin]="dotAnimatedInitialTime"
-      [attr.dur]="dotAnimatedFinalTime"
+      [attr.begin]="dotAnimatedBegin"
+      [attr.dur]="dotAnimatedDur"
       repeatCount="indefinite"
-      [attr.from]="dotAnimatedInitialRadius"
-      [attr.to]="dotAnimatedFinalRadius"></animate>
+      [attr.from]="dotAnimatedFromRadius"
+      [attr.to]="dotAnimatedToRadius"></animate>
     <animate
       attributeName="opacity"
-      [attr.begin]="dotAnimatedInitialTime"
-      [attr.dur]="dotAnimatedFinalTime"
+      [attr.begin]="dotAnimatedBegin"
+      [attr.dur]="dotAnimatedDur"
       repeatCount="indefinite"
-      [attr.from]="dotAnimatedInitialOpacity"
-      [attr.to]="dotAnimatedFinalOpacity"></animate>
+      [attr.from]="dotAnimatedFromOpacity"
+      [attr.to]="dotAnimatedToOpacity"></animate>
   </circle>
   <circle *ngFor="let b of busStopsList; let i = index"
           [attr.cx]="b.getDOMCoordX()" [attr.cy]="b.getDOMCoordY()"
           [attr.r]="dotRadius"
           [attr.fill]="dotColor"
-          [attr.opacity]="dotOpacity"
+          [attr.opacity]="dotOpacity"></circle>
+  <circle *ngFor="let b of busStopsList; let i = index"
+          [attr.cx]="b.getDOMCoordX()" [attr.cy]="b.getDOMCoordY()"
+          [attr.r]="dotRadius"
+          [attr.fill]="dotColor"
+          [attr.opacity]="0"
           (mousedown)="onButtonClick(i)">
+    <animate id="a1r"
+      attributeName="r"
+      [attr.begin]="dotFullscreenBegin"
+      [attr.dur]="dotFullscreenDur"
+      [attr.from]="dotFullscreenFromRadius"
+      [attr.to]="dotFullscreenToRadius"></animate>
+    <animate id="a1f"
+      attributeName="fill"
+      [attr.begin]="dotFullscreenBegin"
+      [attr.dur]="dotFullscreenDur"
+      [attr.from]="dotFullscreenFromColor"
+      [attr.to]="dotFullscreenToColor"></animate>
+    <animate id="a1o"
+      attributeName="opacity"
+      [attr.begin]="dotFullscreenBegin"
+      [attr.dur]="dotFullscreenDur"
+      [attr.from]="dotFullscreenFromOpacity"
+      [attr.to]="dotFullscreenToOpacity"></animate>
+
   </circle>
 </svg>

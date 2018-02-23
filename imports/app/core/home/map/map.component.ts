@@ -16,19 +16,35 @@ export class MapComponent implements OnInit {
 
   dotOpacity: number = 0.6;
 
-  dotAnimatedInitialTime: string = "0s";
+  dotAnimatedBegin: string = "0s";
 
-  dotAnimatedFinalTime: string = "2s";
+  dotAnimatedDur: string = "2s";
 
-  dotAnimatedInitialRadius: string = this.dotRadius;
+  dotAnimatedFromRadius: string = this.dotRadius;
 
-  dotAnimatedFinalRadius: string = "5%";
+  dotAnimatedToRadius: string = "5%";
 
   dotAnimatedColor: string = "#000000"; // Cor original: "#4285F4"
 
-  dotAnimatedInitialOpacity: number = 0.3;
+  dotAnimatedFromOpacity: number = 0.3;
 
-  dotAnimatedFinalOpacity: number = 0;
+  dotAnimatedToOpacity: number = 0;
+
+  dotFullscreenBegin: string = "click";
+
+  dotFullscreenDur: string = "2s";
+
+  dotFullscreenFromRadius: string = this.dotRadius;
+
+  dotFullscreenToRadius: string = "200%";
+
+  dotFullscreenFromColor: string = this.dotColor;
+
+  dotFullscreenToColor: string = "#4285F4";
+
+  dotFullscreenFromOpacity: number = 0;
+
+  dotFullscreenToOpacity: number = 1;
 
   domRect: ClientRect;
 
